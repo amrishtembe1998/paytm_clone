@@ -19,7 +19,7 @@ const Signin = () => {
           ></InputBox>
           <InputBox label={"Password"} placeholder={"123456"}></InputBox>
           <div className="pt-4">
-            <Button label={"Sign up"}></Button>
+            <Button label={"Sign In"}></Button>
           </div>
           <BottomWarning
             label={"Don't have an account? "}

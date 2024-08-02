@@ -38,7 +38,7 @@ userRouter.post("/signup", async (req, res) => {
     const { username, password, firstName, lastName } = req.body;
     const alreadyUser = await User.findOne({ username });
     if (alreadyUser) {
-      console.log("Already User")
+      console.log("Already User");
       return res
         .status(411)
         .json({ message: "Email already taken / Incorrect inputs" });
@@ -107,6 +107,14 @@ userRouter.put("/", authMiddleware, async (req, res) => {
       .status(411)
       .json({ message: `Error while updating information: ${error}` });
   }
+});
+
+userRouter.get("/info", authMiddleware, async (req, res) => {
+  const userId = req.userId;
+  const user = await User.findById(userId);
+  return !user
+    ? res.status(404).json({ message: "User does not exist with specified ID" })
+    : res.status(200).json(user);
 });
 
 userRouter.get("/bulk", async (req, res) => {
