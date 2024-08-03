@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import Button from "./Button";
+import useDebouncedValue from "../hooks/useDebouncedValue";
 
 const Users = () => {
   // Replace with backend call
   const [users, setUsers] = useState([]);
   const [filter, setFilter] = useState("");
+  const value = useDebouncedValue(filter, 2);
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/v1/user/bulk?filter=${filter}`)
+      .get(`http://localhost:3000/api/v1/user/bulk?filter=${value}`)
       .then((response) => setUsers(response.data.user));
-  }, [filter]);
+  }, [value]);
 
   return (
     <>
