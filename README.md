@@ -12,7 +12,7 @@ Project covers basic functionalities like
 5. Send money
 
 Lot of Improvements to be made like
-1. debouncing for search result
+1. debouncing for search result - Done
 2. OTP based authentication
 3. Popup for errors
 4. Notification for receiver when amount received.
