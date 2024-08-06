@@ -10,12 +10,12 @@ Project covers basic functionalities like
 3. JWT based authentication
 4. Dashboard to view users
 5. Send money
+6. debouncing for search result
 
 Lot of Improvements to be made like
-1. debouncing for search result - Done
-2. OTP based authentication
-3. Popup for errors
-4. Notification for receiver when amount received.
+1. OTP based authentication
+2. Popup for errors
+3. Notification for receiver when amount received.
 etc.
 
 To try out the application in local,
